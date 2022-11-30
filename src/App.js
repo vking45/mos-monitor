@@ -1,12 +1,13 @@
 import logo from './logo.svg';
+import Splash from './screens/Splash';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <span className="text-lg text-teal-400">Hello</span>
-      </header>
+    <div className="flex">
+      <aside className="flex justify-start h-full">
+          <Splash />
+      </aside>
     </div>
   );
 }
