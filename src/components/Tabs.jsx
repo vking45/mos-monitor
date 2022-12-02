@@ -48,62 +48,49 @@ function Tabs() {
         </div>
         <div className="flex justify-center align-middle">
             {transfers ? 
-            <div class="flex flex-col w-96">
+            
+            <div class="flex flex-col w-2/3 ml-44 mx-6 my-6">
   <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
     <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
       <div class="overflow-hidden">
-        <table class="min-w-full">
-          <thead class="border-b">
-            <tr>
-              <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                #
-              </th>
-              <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                First
-              </th>
-              <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                Last
-              </th>
-              <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                Handle
-              </th>
-            </tr>
-          </thead>
+        <table class="min-w-full text-center">
+          <div className="flex"><span className="justify-start items-top text-lg text-left text-gray-300">28 December 2020</span></div>
           <tbody>
-            <tr class="border-b">
-              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1</td>
-              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                Mark
+            <tr class="border-b border-gray-500 px-4 py-4">
+              <td class="text-sm inline-flex text-white font-medium px-6 py-4 whitespace-nowrap">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff0000" class=" ml-2 w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 19.5v-15m0 0l-6.75 6.75M12 4.5l6.75 6.75" />
+              </svg>
+
+                <span className="text-white font-light whitespace-nowrap text-lg">Sent</span>
               </td>
-              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                Otto
+              <td class="text-lg text-white font-light px-6 py-4 whitespace-nowrap">
+                Txn
               </td>
-              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                @mdo
+              <td class="text-lg text-white font-light px-6 py-4 whitespace-nowrap">
+                amt
               </td>
-            </tr>
-            <tr class="bg-white border-b">
-              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2</td>
-              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                Jacob
-              </td>
-              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                Thornton
-              </td>
-              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                @fat
+              <td class="text-lg text-white font-light px-6 py-4 whitespace-nowrap">
+                time
               </td>
             </tr>
-            <tr class="bg-white border-b">
-              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">3</td>
-              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                Larry
+            <tr class="border-b border-gray-500">
+              <td class="text-sm inline-flex text-white font-medium px-6 py-4 whitespace-nowrap">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#50C878" class=" ml-2 w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m0 0l6.75-6.75M12 19.5l-6.75-6.75" />
+              </svg>
+
+
+                <span className="text-white font-light whitespace-nowrap text-lg">Received</span>
               </td>
-              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                Wild
+              <td class="text-lg text-white font-light px-6 py-4 whitespace-nowrap">
+                Txn
               </td>
-              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                @twitter
+              <td class="text-lg text-white font-light px-6 py-4 whitespace-nowrap">
+                amt
+              </td>
+              <td class="text-lg text-white font-light px-6 py-4 whitespace-nowrap">
+                time
               </td>
             </tr>
           </tbody>
