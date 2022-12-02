@@ -64,8 +64,8 @@ function Tabs() {
 
                 <span className="text-white font-light whitespace-nowrap text-lg">Sent</span>
               </td>
-              <td class="text-lg text-white font-light px-6 py-4 whitespace-nowrap">
-                Txn
+              <td class="text-lg text-red-600 font-light px-6 py-4 whitespace-nowrap">
+                -Txn
               </td>
               <td class="text-lg text-white font-light px-6 py-4 whitespace-nowrap">
                 amt
@@ -83,8 +83,8 @@ function Tabs() {
 
                 <span className="text-white font-light whitespace-nowrap text-lg">Received</span>
               </td>
-              <td class="text-lg text-white font-light px-6 py-4 whitespace-nowrap">
-                Txn
+              <td class="text-lg text-green-600 font-light px-6 py-4 whitespace-nowrap">
+                +Txn
               </td>
               <td class="text-lg text-white font-light px-6 py-4 whitespace-nowrap">
                 amt
