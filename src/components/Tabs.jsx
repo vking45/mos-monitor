@@ -1,5 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
+import Nfts from './Nfts';
+import Tokens from './Tokens';
 import Transfers from './Transfers';
 
 function Tabs() {
@@ -49,8 +51,8 @@ function Tabs() {
         </div>
         <div className="flex justify-center align-middle">
             {transfers ? <Transfers/> : ""}
-            {tokens ? <p className='text-white'>Tokens</p> : ""}
-            {nfts ? <p className='text-white'>NFTs</p> : ""}
+            {tokens ? <Tokens /> : ""}
+            {nfts ? <Nfts /> : ""}
         </div>
     </div>
   )

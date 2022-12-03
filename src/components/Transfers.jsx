@@ -27,10 +27,10 @@ function Transfers() {
                   <td className="text-lg text-white font-light px-6 py-4 whitespace-nowrap">
                     {entry.ticker}
                   </td>
-                  <td className={ entry.inwards ? "text-lg text-green-600 font-light px-6 py-4 whitespace-nowrap" : "text-lg text-red-600 font-light px-6 py-4 whitespace-nowrap"}>
+                  <td className="text-lg text-white font-light px-6 py-4 whitespace-nowrap">
                     { entry.inwards ? entry.from.slice(0,6) + "..." + entry.from.slice(38) : entry.to.slice(0,6) + "..." + entry.to.slice(38) }
                   </td>
-                  <td className="text-lg text-white font-light px-6 py-4 whitespace-nowrap">
+                  <td className={ entry.inwards ? "text-lg text-green-600 font-light px-6 py-4 whitespace-nowrap" : "text-lg text-red-600 font-light px-6 py-4 whitespace-nowrap"}>
                     { parseFloat(entry.amt.toFixed(2)) }
                   </td>
                   <td className="text-lg text-white font-light px-6 py-4 whitespace-nowrap">
