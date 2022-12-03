@@ -4,7 +4,7 @@ import Transfers from './Transfers';
 
 function Tabs() {
 
-    const [transfers, setTransfers] = useState(true);
+    const [transfers, setTransfers] = useState(false);
     const [tokens, setTokens] = useState(false);
     const [nfts, setNfts] = useState(false);
 
