@@ -23,26 +23,36 @@ export const getTransactions = async(address) => {
             window.location.href = "/error/";
             return;
         });
+        console.log(res.data.data);
         for(const i of res.data.data.items){
             if(i.log_events.length !== 0){
                 for(const j of i.log_events){
                     if(j.decoded.name === "Transfer"){
                         let d = moment(j.block_signed_at);
-                        const found = txs.some(el => el.date === d.format("dddd, MMMM Do YYYY"));
+                        const found = txs.some(el => el.date === d.format("MMMM Do YYYY"));
                         if(!found){
-                            txs.push({ date : d.format("dddd, MMMM Do YYYY"), 
-                            list : [{ticker : j.sender_contract_ticker_symbol ,from : j.decoded.params[0]["value"], to : j.decoded.params[1]["value"], amt : (parseInt(j.decoded.params[2]["value"])/(10**j.sender_contract_decimals))}]
-                            });
+                            if(j.decoded.params[0]["value"] === address){
+                                txs.push({ date : d.format("MMMM Do YYYY"), 
+                                list : [{ticker : j.sender_contract_ticker_symbol ,from : j.decoded.params[0]["value"], to : j.decoded.params[1]["value"], amt : (parseInt(j.decoded.params[2]["value"])/(10**j.sender_contract_decimals)), inwards : false, time : d.format("hh : mm")}]});
+                            }
+                            else{
+                                txs.push({ date : d.format("MMMM Do YYYY"), 
+                                list : [{ticker : j.sender_contract_ticker_symbol ,from : j.decoded.params[0]["value"], to : j.decoded.params[1]["value"], amt : (parseInt(j.decoded.params[2]["value"])/(10**j.sender_contract_decimals)), inwards : true, time : d.format("hh : mm")}]});
+                            }                                
                         }
                         else{
-                            let x = txs.find(el => el.date === d.format("dddd, MMMM Do YYYY"));
-                            x.list.push({ticker : j.sender_contract_ticker_symbol ,from : j.decoded.params[0]["value"], to : j.decoded.params[1]["value"], amt : (parseInt(j.decoded.params[2]["value"])/(10**j.sender_contract_decimals))});
+                            let x = txs.find(el => el.date === d.format("MMMM Do YYYY"));
+                            if(j.decoded.params[0]["value"] === address){
+                                x.list.push({ticker : j.sender_contract_ticker_symbol ,from : j.decoded.params[0]["value"], to : j.decoded.params[1]["value"], amt : (parseInt(j.decoded.params[2]["value"])/(10**j.sender_contract_decimals)), inwards : false, time : d.format("hh : mm")});
+                            }
+                            else{
+                                x.list.push({ticker : j.sender_contract_ticker_symbol ,from : j.decoded.params[0]["value"], to : j.decoded.params[1]["value"], amt : (parseInt(j.decoded.params[2]["value"])/(10**j.sender_contract_decimals)), inwards : true, time : d.format("hh : mm")});
+                            }
                         }
                     //    console.log(d.format("dddd, MMMM Do YYYY"))
                     }
                 }
             }
         }
-        console.log(txs);
     return txs;
 }
