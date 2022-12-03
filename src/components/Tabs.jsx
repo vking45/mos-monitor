@@ -1,6 +1,5 @@
 import React from 'react';
 import { useState } from 'react';
-
 function Tabs() {
 
     const [transfers, setTransfers] = useState(true);
@@ -106,7 +105,8 @@ function Tabs() {
   </div>
 </div>
             : ""}
-            {tokens ? <p className='text-white'>Tokens</p> : ""}
+            {tokens ? <p className='text-white'>
+            </p> : ""}
             {nfts ? <p className='text-white'>NFTs</p> : ""}
         </div>
     </div>
