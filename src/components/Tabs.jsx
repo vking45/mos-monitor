@@ -7,7 +7,7 @@ import Transfers from './Transfers';
 function Tabs() {
 
     const [transfers, setTransfers] = useState(false);
-    const [tokens, setTokens] = useState(false);
+    const [tokens, setTokens] = useState(true);
     const [nfts, setNfts] = useState(false);
 
     const active_tab = "inline-block p-4 rounded-t-lg border-b-2 text-blue-600 border-blue-600 hover:text-blue-600 hover:border-blue-600 active:text-blue-600";

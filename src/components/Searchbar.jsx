@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { getTransactions } from '../covalent/api';
 
 export let transfers = [];
+export let enteredAddr = "";
 function Searchbar() {
     
     const [addr, setAddr] = useState("");
@@ -23,6 +24,7 @@ function Searchbar() {
         if(validate(addr) === true){
             transfers = await getTransactions(addr);
         }
+        enteredAddr = addr;
         setLoading(false);
     }
 

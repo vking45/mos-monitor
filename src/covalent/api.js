@@ -27,6 +27,7 @@ export const getTransactions = async(address) => {
         for(const i of res.data.data.items){
             if(i.log_events.length !== 0){
                 for(const j of i.log_events){
+                    if(j.decoded !== null){
                     if(j.decoded.name === "Transfer"){
                         let d = moment(j.block_signed_at);
                         const found = txs.some(el => el.date === d.format("MMMM Do YYYY"));
@@ -51,8 +52,40 @@ export const getTransactions = async(address) => {
                         }
                     //    console.log(d.format("dddd, MMMM Do YYYY"))
                     }
+                  }
                 }
             }
         }
     return txs;
+}
+
+export const getHRCBalances = async(address) => {
+    let bal = [];
+        const res = await axios.get(`${baseURL}/${blockchainChainId}/address/${address}/balances_v2/?quote-currency=USD&format=JSON&key=${APIKEY}`)
+        .catch((err) => {
+            console.log(err.response.status);
+            window.location.href = "/error/";
+            return;
+        });
+        for(const i of res.data.data.items){
+            bal.push({name : i.contract_ticker_symbol, value : parseFloat(i.quote)})
+        }
+        return bal;
+}
+
+export const getNFTs = async(address) => {
+    let NFTs = [];
+        const res = await axios.get(`${baseURL}/${blockchainChainId}/address/${address}/balances_v2/?quote-currency=USD&format=JSON&nft=true&no-nft-fetch=false&key=${APIKEY}`)
+        .catch((err) => {
+            console.log(err.response.status);
+            window.location.href = "/error/";
+            return;
+        });
+        console.log(res.data.data);
+        for(const j of res.data.data.items){
+            if(j.type === "nft"){
+                NFTs.push({contract_address : j.contract_address, contract_name : j.contract_name, balances : j.nft_data.length, last_interacted : moment(j.last_transferred_at).format("dddd, MMMM Do YYYY")});
+            }
+        }
+    return NFTs;
 }
