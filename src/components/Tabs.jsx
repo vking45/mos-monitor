@@ -6,8 +6,9 @@ import Transfers from './Transfers';
 
 function Tabs() {
 
+    const [first, setFirst] = useState(true);
     const [transfers, setTransfers] = useState(false);
-    const [tokens, setTokens] = useState(true);
+    const [tokens, setTokens] = useState(false);
     const [nfts, setNfts] = useState(false);
 
     const active_tab = "inline-block p-4 rounded-t-lg border-b-2 text-blue-600 border-blue-600 hover:text-blue-600 hover:border-blue-600 active:text-blue-600";
@@ -17,16 +18,19 @@ function Tabs() {
         setTransfers(true);
         setTokens(false);
         setNfts(false);
+        setFirst(false);
     }
     const onTokens = () => {
         setTokens(true);
         setTransfers(false);
         setNfts(false);
+        setFirst(false);
     }
     const onNfts = () => {
         setNfts(true);
         setTransfers(false);
         setTokens(false);
+        setFirst(false);
     }
 
     return (
@@ -50,6 +54,7 @@ function Tabs() {
             </div>
         </div>
         <div className="flex justify-center align-middle">
+            {first ? <p className="mt-8 leading-relaxed text-white">Please enter an address in the above input field!</p> : ""}
             {transfers ? <Transfers/> : ""}
             {tokens ? <Tokens /> : ""}
             {nfts ? <Nfts /> : ""}

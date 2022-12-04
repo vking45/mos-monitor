@@ -5,6 +5,7 @@ const baseURL = 'https://api.covalenthq.com/v1';
 const blockchainChainId = '9001';
 
 // Test Address - 0x47c5dcfd55b83fbd0a39ac62db9558624723d29f
+//                  0xafbc921b9ca35949024f0687cb8c9554f9a4d1b5
 /* 
 
     Transfers : {
@@ -67,8 +68,9 @@ export const getHRCBalances = async(address) => {
             window.location.href = "/error/";
             return;
         });
+        console.log(res.data.data);
         for(const i of res.data.data.items){
-            bal.push({name : i.contract_ticker_symbol, value : parseFloat(i.quote)})
+            bal.push({name : i.contract_ticker_symbol, value : parseFloat(i.quote), add : i.contract_address, full_name : i.contract_name, holding : parseInt(i.balance)/(10**i.contract_decimals)})
         }
         return bal;
 }
