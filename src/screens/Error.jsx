@@ -12,7 +12,7 @@ function Error() {
 			</h2>
 			<p className="text-2xl font-semibold md:text-3xl text-hot">Sorry, we couldn't fetch the data for the address you entered.</p> <br />
 			<p className="text-2xl font-semibold md:text-xl text-hot">Please try a different address or try again later! <br /> Sorry for the inconvenience caused! </p> <br /> <br />
-			<Link to="/" className="mt-5 text-mild bg-gradient-to-r from-emerald-400 via-emerald-500 to-emerald-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-emerald-800 shadow-lg dark:shadow-lg shadow-emerald-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-1">Back To Homepage</Link>
+			<Link to="/" className="mt-5 text-mild bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-800 shadow-lg dark:shadow-lg shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-1">Back To Homepage</Link>
 		</div>
 	</div>
 </section>
