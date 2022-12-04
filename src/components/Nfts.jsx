@@ -21,7 +21,7 @@ class Nfts extends React.Component {
     render() {
     return(
         <>
-        <div className="overflow-x-auto relative rounded-md">
+        <div className="overflow-x-auto relative rounded-md text-center">
             <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                 <thead className="text-lg text-mild uppercase bg-gray-800 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
@@ -40,6 +40,8 @@ class Nfts extends React.Component {
                     </tr>
                 </thead>
                 <tbody>
+                    {this.state.loading ? <p className='text-white text-center'>Loading...</p> : ""}
+                    {this.state.empty ? <p className='text-white text-center'>No NFTs for this Address</p> : ""}
                         {
                             this.state.nfts.map((tok) => (
                                 <tr className="bg-gray-900 border-b border-gray-700 text-spicy" key={tok.contract_address}>
