@@ -22,7 +22,7 @@ class Tokens extends React.Component {
     render(){
     return (
         <div className="w-full h-full ml-44 max-w-4xl">
-          <section className="ml-500 text-right">
+          <section className="ml-500">
             <div className="w-1/3 ml-4 flex justify-center ml-500 align-middle text-white bg-blue-100 h-full border border-gray-700 shadow-md mx-4 rounded-lg overflow-hidden py-5">
                 {this.state.loading ? <p className='text-white'>Loading...</p> : <Example data={this.state.dataArray}/>}
             </div>
@@ -61,12 +61,12 @@ class Tokens extends React.Component {
                             this.state.dataArray.map((tok) => (
                                 <tr className="bg-gray-900 border-b border-gray-700 text-spicy" key={tok.contract_address}>
                                 <th scope="row" className="py-4 px-6 font-medium text-spicy whitespace-nowrap dark:text-white">
-                                    <a href={`https://explorer.harmony.one/address/${tok.contract_address}`} target="blank" >
+                                    <a>
                                         {tok.full_name}
                                     </a>
                                 </th>
                                 <th scope="row" className="py-4 px-6 font-medium text-spicy whitespace-nowrap dark:text-white">
-                                <a href={`https://explorer.harmony.one/address/${tok.contract_address}`} target="blank" >
+                                <a>
                                         {tok.add}
                                     </a>
                                 </th>

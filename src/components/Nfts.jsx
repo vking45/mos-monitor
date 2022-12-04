@@ -46,12 +46,12 @@ class Nfts extends React.Component {
                             this.state.nfts.map((tok) => (
                                 <tr className="bg-gray-900 border-b border-gray-700 text-spicy" key={tok.contract_address}>
                                 <th scope="row" className="py-4 px-6 font-medium text-spicy whitespace-nowrap dark:text-white">
-                                    <a href={`https://explorer.harmony.one/address/${tok.contract_address}`} target="blank" >
+                                    <a>
                                         {tok.contract_name}
                                     </a>
                                 </th>
                                 <th scope="row" className="py-4 px-6 font-medium text-spicy whitespace-nowrap dark:text-white">
-                                <a href={`https://explorer.harmony.one/address/${tok.contract_address}`} target="blank" >
+                                <a>
                                         {tok.contract_address}
                                     </a>
                                 </th>
