@@ -1,6 +1,6 @@
 # MosMonitor
 
-This project has been specially crafted for the Harmony X Encode Hackathon 2022 !
+This project has been specially crafted for the EVMOS X Encode Hackathon 2022 !
 
 ## Team Name - Vanguard
 
